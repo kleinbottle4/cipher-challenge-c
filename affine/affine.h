@@ -31,8 +31,10 @@ char affine_char(char c, int a, int b)
             return '\0';
         } else {
             i += 1;
-            i = (a * i + b) % 26;
-            return ALPHABET[i];
+            int s_i = ((a * i + b) % 26) - 1;
+            if (s_i < 0)
+	            s_i += 26;
+	        return ALPHABET[s_i];
         }
     }
 }
@@ -49,7 +51,9 @@ void affine_str(char *s, int a, int b, const char *alph, bool debug)
                 *c = n;
             } else if (debug) {
                 printf("# error: %c not in alphabet\n", *c);
+		*c = '_';
             }
         }
+	c++;
     }
 }

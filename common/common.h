@@ -69,7 +69,6 @@ void str_lc(char *s)
 	while (*c != '\0') {
 		if (char_find(*c, U_ALPHABET) != -1) {
 			*c = char_lc(*c);
-			printf("%c ", *c);
 		}
 		c++;
 	}
