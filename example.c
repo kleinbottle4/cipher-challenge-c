@@ -2,7 +2,10 @@
 
 int main(void)
 {
-	char x = shift_char('x', 5, "abcdefghijklmnopqrstuvwxyz", ".");
-	printf("%c\n", x);
+	printf("%c\n", char_lc('Z'));
+	char buff[] = "Hello, My Name Is Geoff.";
+	puts(buff);
+	str_lc(buff);
+	puts(buff);
 	return 0;
 }

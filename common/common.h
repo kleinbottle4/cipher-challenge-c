@@ -20,6 +20,7 @@
 #include <string.h>
 
 #define ALPHABET "abcdefghijklmnopqrstuvwxyz"
+#define U_ALPHABET "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 #define PUNCTUATION ".,'?!-: ()\n"
 
 int char_find(char c, const char *s)
@@ -37,9 +38,9 @@ int char_find(char c, const char *s)
 	return -1;
 }	
 
-char shift_char(char c, int i, const char *alph, const char *punc)
+char char_shift(char c, int i, const char *alph)
 {
-	if (char_find(c, punc) != -1) {
+	if (char_find(c, PUNCTUATION) != -1) {
 		return c;
 	} else {
 		int x = char_find(c, alph);
@@ -51,4 +52,26 @@ char shift_char(char c, int i, const char *alph, const char *punc)
 			return alph[x];
 		}
 	}
+}
+
+char char_lc(char c)
+{
+	if (c < 'a') {
+	/* c is upper case*/
+		c = 'a' + (c - 'A');
+	}
+	return c;
+}
+
+void str_lc(char *s)
+{
+	char *c = s;
+	while (*c != '\0') {
+		if (char_find(*c, U_ALPHABET) != -1) {
+			*c = char_lc(*c);
+			printf("%c ", *c);
+		}
+		c++;
+	}
+	putchar('\n');
 }
