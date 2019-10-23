@@ -1,6 +1,6 @@
 /*
- *  affine.c's principle component is the Affine shifter
- * 
+ *  affine.h's principle component is the Affine shifter
+ *
  *  Copyright (C) 2019 syed343
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -17,6 +17,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#ifndef _CIPHER_AFFINE
+#define _CIPHER_AFFINE
+ 
 #include "../common/common.h"
 #include <stdbool.h>
 
@@ -57,3 +60,4 @@ void affine_str(char *s, int a, int b, const char *alph, bool debug)
 	c++;
     }
 }
+#endif

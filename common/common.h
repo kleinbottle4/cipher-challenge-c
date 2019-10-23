@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#ifndef _CIPHER_COMMON
+#define _CIPHER_COMMON
+
 #include <stdio.h>
 #include <string.h>
 
@@ -74,3 +77,5 @@ void str_lc(char *s)
 	}
 	putchar('\n');
 }
+
+#endif
